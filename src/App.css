@@ -1,38 +1,166 @@
-.App {
-  text-align: center;
+body {
+    background-color: #C8D0D2;
+    margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+    max-width: 900px;
+    margin: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+form {
+    background-color: white;
+    margin-bottom: 40px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+form .controls {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+form .form_group label {
+    margin-right: 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form .form_group select,
+form .form_group input {
+    padding: 5px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+form .form_group .btn {
+    align-items: center;
+    appearance: none;
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395A;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+}
+
+form .form_group .btn:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+form .form_group .btn:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+form .form_group .btn:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+.flashcard_list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: white;
+    box-shadow: 0 0 5px 2px rgb(0, 0, 0, .3);
+    margin-bottom: 20px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    transform: perspective(1000px) rotateY(var(--rotate-y, 0));
+    transform-style: preserve-3d;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    -webkit-transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
+    -moz-transform: perspective(1000px) rotateY(var(--rotate-y, 0));
+    -ms-transform: perspective(1000px) rotateY(var(--rotate-y, 0));
+    -o-transform: perspective(1000px) rotateY(var(--rotate-y, 0));
+    cursor: pointer;
+}
+
+.card:hover {
+    --translate-y: -2px;
+    box-shadow: 0 0 5px 2px rgb(0, 0, 0, .5);
+}
+
+.card.flip {
+    --rotate-y: 180deg
+}
+
+.card .front,
+.card .back {
+    position: absolute;
+    padding: 20px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.card .front {
+    left: 0;
+}
+
+.card .back {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+}
+
+.card_question {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.card_options {
+    font-size: .9rem;
+}
+
+.card_options .option {
+    margin-bottom: 5px;
+    color: #777;
 }
