@@ -1,15 +1,15 @@
 body {
-    background-color: #C8D0D2;
+    background-color: #EEEEEE;
     margin: 0;
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1080px;
     margin: auto;
 }
 
 form {
-    background-color: white;
+    background-color: #222831;
     margin-bottom: 40px;
     padding: 10px 20px;
     display: flex;
@@ -30,11 +30,13 @@ form .form_group label {
     margin-right: 10px;
     font-size: 1.4rem;
     font-weight: 600;
+    color: #EEEEEE;
+    letter-spacing: 3px;
 }
 
 form .form_group select,
 form .form_group input {
-    padding: 5px;
+    padding: 10px 5px;
     border-radius: 6px;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
@@ -42,17 +44,20 @@ form .form_group input {
     -o-border-radius: 6px;
     margin-top: 10px;
     width: 100%;
+    background-color: #00ADB5;
+    border: none;
+    color: white;
 }
 
 form .form_group .btn {
     align-items: center;
     appearance: none;
-    background-color: #FCFCFD;
+    background-color: #00ADB5;
     border-radius: 4px;
     border-width: 0;
-    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #00ADB5 0 -3px 0 inset;
     box-sizing: border-box;
-    color: #36395A;
+    color: #EEEEEE;
     cursor: pointer;
     display: inline-flex;
     font-family: "JetBrains Mono", monospace;
@@ -76,22 +81,22 @@ form .form_group .btn {
 }
 
 form .form_group .btn:focus {
-    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-shadow: #00ADB5 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #00ADB5 0 -3px 0 inset;
 }
 
 form .form_group .btn:hover {
-    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #00ADB5 0 -3px 0 inset;
     transform: translateY(-2px);
 }
 
 form .form_group .btn:active {
-    box-shadow: #D6D6E7 0 3px 7px inset;
+    box-shadow: #00ADB5 0 3px 7px inset;
     transform: translateY(2px);
 }
 
 .flashcard_list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 10px;
     padding: 0 20px;
 }
