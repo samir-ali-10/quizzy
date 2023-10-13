@@ -47,6 +47,7 @@ form .form_group input {
     background-color: #00ADB5;
     border: none;
     color: white;
+    outline: 1px solid white;
 }
 
 form .form_group .btn {
